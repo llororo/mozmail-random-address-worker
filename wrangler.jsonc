@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "mozmail-random-address-worker",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-28",
+  "vars": {
+    "ADDRESS_DOMAIN": "example.mozmail.com",
+    "ALLOWED_ORIGIN": "https://example.com",
+    "MASK_LENGTH": "12"
+  },
+  "ratelimits": [
+    {
+      "name": "CONTACT_RATE_LIMITER",
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 10,
+        "period": 60
+      }
+    }
+  ]
+}
